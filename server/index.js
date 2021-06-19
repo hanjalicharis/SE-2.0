@@ -18,7 +18,7 @@ app.use(cors());
 app.use('/posts', postRoutes);
 
 app.get('/', (req, res) => {
-    res.send("Hello API");
+    res.send("API for my website works. For frontend side, visit: https://friendly-benz-6b17dc.netlify.app");
 })
 
 const CONNECTION_URL = process.env.CONNECTION_URL;
