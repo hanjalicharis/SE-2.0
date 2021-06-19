@@ -34,13 +34,13 @@ const Post = ({ post, setCurrentId }) => {
             <div>
                 <Typography className={classes.title} variant="h5" gutterBottom > {post.title}</Typography>
                 <CardContent>
-                    <Typography className={classes.message} variant="h5" gutterBottom > {post.message}</Typography>
+                    <Typography className={classes.message} variant="body2" gutterBottom component="p" color="textSecondary" > {post.message}</Typography>
                 </CardContent>
                 <CardActions className={classes.cardActions}>
                     <Button size="small" color="primary" onClick={() => dispatch(likePost(post._id))}>
                         <ThumbUpAltIcon fontSize="small" />
                         Like
-                        {post.likeCount}
+                        &nbsp; {post.likeCount} &nbsp;
                     </Button>
                     <Button size="small" color="primary" onClick={() => dispatch(deletePost(post._id))}>
                         <DeleteIcon fontSize="small" />
