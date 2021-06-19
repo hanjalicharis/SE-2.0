@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { AppBar, Typography, Toolbar, Button, Avatar } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 
 import useStyles from './styles';
 import hanjaries from '../../img/memories.jpeg';
@@ -12,6 +12,7 @@ const NavBar = () => {
     const classes = useStyles();
     const dispatch = useDispatch();
     const history = useHistory();
+    const location = useLocation();
 
     const logout = () => {
         dispatch({ type: 'LOGOUT' });
@@ -23,14 +24,14 @@ const NavBar = () => {
 
     console.log(user);
 
-    /* useEffect(() => {
+    useEffect(() => {
         const token = user?.token;
 
         // JWT implementation later for normal login/register
 
         setUser(JSON.parse(localStorage.getItem('profile')));
-    }, [])
-    */
+    }, [location])
+
 
     return (
         <AppBar className={classes.appBar} position="static" color="inherit">
