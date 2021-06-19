@@ -7,7 +7,7 @@ export default makeStyles((theme) => ({
         },
     },
     paper: {
-        padding: theme.spacing(2),
+        padding: theme.spacing(4),
     },
     form: {
         display: 'flex',
@@ -20,5 +20,10 @@ export default makeStyles((theme) => ({
     },
     buttonSubmit: {
         marginBottom: 10,
+        background: 'black',
+    },
+    buttonDelete: {
+        marginBottom: 10,
+        background: 'black',
     },
 }));

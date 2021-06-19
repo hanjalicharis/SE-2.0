@@ -29,9 +29,14 @@ const Form = ({ currentId, setCurrentId }) => {
             dispatch(createPost(postData));
         }
 
+        clear();
+
     }
 
     const clear = () => {
+
+        setCurrentId(null);
+        setPostData({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
 
     }
 
@@ -46,8 +51,8 @@ const Form = ({ currentId, setCurrentId }) => {
                 <div className={classes.fileInput}>
                     <FileBase type="file" multiple={false} onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} />
                 </div>
-                <Button className={classes.buttonSubmit} color="primary" size="large" type="submit" fullWidth>Submit memory</Button>
-                <Button color="secondary" size="small" onClick={clear}>Clear memory</Button>
+                <Button className={classes.buttonSubmit} style={{ color: 'white' }} size="large" type="submit" fullWidth>Submit memory</Button>
+                <Button className={classes.buttonDelete} style={{ color: 'red' }} size="large" fullWidth onClick={clear}>Clear memory</Button>
             </form>
         </Paper >
     );
