@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AppBar, Typography, Toolbar, Button, Avatar } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import decode from 'jwt-decode';
 import { useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom'
 
@@ -27,8 +28,12 @@ const NavBar = () => {
     useEffect(() => {
         const token = user?.token;
 
-        // JWT implementation later for normal login/register
-
+        if (token) {
+            const decoded = decode(token);
+            if (decoded.exp * 1000 < new Date().getTime()) {
+                logout();
+            }
+        }
         setUser(JSON.parse(localStorage.getItem('profile')));
     }, [location])
 
