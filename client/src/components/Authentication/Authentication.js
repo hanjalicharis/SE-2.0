@@ -8,12 +8,16 @@ import { useHistory } from 'react-router-dom';
 import useStyles from './style';
 import Input from './Input';
 import GoogleIcon from './googleIcon';
+import { signin, signup } from '../../actions/auth'
+
+const initial = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
 
 const Authentication = () => {
 
     const classes = useStyles();
-    const [showPassword, setShowPassword] = useState(false);
 
+    const [showPassword, setShowPassword] = useState(false);
+    const [formData, setFormData] = useState(initial);
     const [isSignedUp, setIsSignedUp] = useState(false);
 
     const dispatch = useDispatch();
@@ -25,11 +29,20 @@ const Authentication = () => {
     }
 
     const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword)
-    const handleSubmit = () => {
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (isSignedUp) {
+            dispatch(signup(formData, history));
+        }
+        else {
+            dispatch(signin(formData, history));
+        }
     };
-    const handleChange = () => {
 
+    const handleChange = (e) => {
+        e.preventDefault();
+        setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     const googleSuccess = async (res) => {
