@@ -8,7 +8,7 @@ import { useHistory } from 'react-router-dom';
 import useStyles from './style';
 import Input from './Input';
 import GoogleIcon from './googleIcon';
-import { signin, signup } from '../../actions/auth'
+import { signin, signup } from '../../actions/auth';
 
 const initial = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
 
@@ -25,7 +25,7 @@ const Authentication = () => {
 
     const switchMode = () => {
         setIsSignedUp((prevIsSignedUp) => !prevIsSignedUp)
-        handleShowPassword(false);
+        setShowPassword(false);
     }
 
     const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword)
