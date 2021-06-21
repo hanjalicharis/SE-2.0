@@ -20,7 +20,7 @@ app.use('/posts', postRoutes);
 app.use('/user', userRoutes);
 
 app.get('/', (req, res) => {
-    res.send("API for my website works. For frontend side, visit: https://friendly-benz-6b1dc.netlify.sapp");
+    res.send("API for my website works. For frontend side, visit: https://hanjaries.netlify.app");
 })
 
 const CONNECTION_URL = process.env.CONNECTION_URL;
