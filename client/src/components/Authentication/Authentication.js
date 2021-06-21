@@ -78,10 +78,10 @@ const Authentication = () => {
                                 </>
                             )}
                         <Input name="email" label="Email Address" handleChange={handleChange} type="email" />
-                        <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />
+                        <Input name="password" label="Password" id="showPasswordButton" handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />
                         {isSignedUp && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" />}
                     </Grid>
-                    <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
+                    <Button type="submit" fullWidth variant="contained" color="primary" id="LoginButton" className={classes.submit}>
                         {isSignedUp ? 'Sign Up' : 'Sign In'}
                     </Button>
                     <GoogleLogin

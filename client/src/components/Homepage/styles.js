@@ -10,6 +10,7 @@ export default makeStyles((theme) => ({
         justifyContent: 'center',
         alignItems: 'center',
     },
+
     heading: {
         color: 'black',
         textDecoration: 'bolder',

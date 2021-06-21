@@ -21,7 +21,7 @@ function Homepage() {
     return (
         <Grow in>
             <Container>
-                <Grid container className={classes.firstContainer} justify="space-between" alignItems="stretch" spacing={3}>
+                <Grid container className={classes.firstContainer} display="flex" justify="space-between" alignItems="stretch" spacing={3}>
                     <Grid item xs={12} sm={7}>
                         <Posts setCurrentId={setCurrentId} />
                     </Grid>
